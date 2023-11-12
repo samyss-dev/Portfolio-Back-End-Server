@@ -1,4 +1,7 @@
 {
+	"name": "portfolio-back-end-server",
+  	"version": "1.0.0",
+  	"private": true,
 	"scripts": {
 		"build": "tsc --build",
 		"start:dev": "nodemon --exec ts-node src/index.ts",
