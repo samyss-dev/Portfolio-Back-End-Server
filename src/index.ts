@@ -1,5 +1,5 @@
 import cors from "cors";
-import express, { json, response } from "express";
+import express, { json } from "express";
 import { ProjectsController } from "./controllers/ProjectsController";
 import { ContactsController } from "./controllers/ContactsController";
 
