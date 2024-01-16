@@ -1,15 +1,14 @@
 import cors from "cors";
 import express, { json, response } from "express";
-import { config } from "dotenv";
 import { ProjectsController } from "./controllers/ProjectsController";
 import { ContactsController } from "./controllers/ContactsController";
-config();
-const app = express();
 
+const app = express();
 const allowedOrigins = process.env.CORS_ORIGIN?.split(",");
 
-if (!allowedOrigins)
+if (!allowedOrigins) {
 	throw new Error("CORS Exception - Enviroment Variable for Front-end origin was not provided!");
+}
 
 app.use(cors({ origin: allowedOrigins }));
 app.use(json());
