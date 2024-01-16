@@ -4,6 +4,11 @@ import { ProjectsController } from "./controllers/ProjectsController";
 import { ContactsController } from "./controllers/ContactsController";
 
 const app = express();
+const allowedOrigins = process.env.CORS_ORIGIN?.split(",");
+
+if (!allowedOrigins) {
+	throw new Error("CORS Exception - Enviroment Variable for Front-end origin was not provided!");
+}
 
 app.use(cors({ origin: process.env.CORS_ORIGIN }));
 app.use(json());
