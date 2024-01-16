@@ -15,11 +15,11 @@ export class ProjectsController {
       prisma.technology.findMany(),
     ]);
 
-    return projects.map((project) => ({
+    return projects.map((project: any) => ({
       ...project,
       technologies: technologies
-        .filter((technology) => technology.projectId === project.id)
-        .map((technology) => technology.name),
+        .filter((technology: any) => technology.projectId === project.id)
+        .map((technology: any) => technology.name),
     }));
   }
 }
