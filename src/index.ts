@@ -10,7 +10,7 @@ if (!allowedOrigins) {
 	throw new Error("CORS Exception - Enviroment Variable for Front-end origin was not provided!");
 }
 
-app.use(cors({ origin: process.env.CORS_ORIGIN }));
+app.use(cors({ origin: allowedOrigins }));
 app.use(json());
 
 app.get("/projects", async (request, response) => {
